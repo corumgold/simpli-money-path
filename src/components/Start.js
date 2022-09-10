@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setName } from "../redux/user";
 
 const Start = () => {
   const dispatch = useDispatch();
-  const [userName, setUserName] = useState({ name: "" });
+  const [userName, setUserName] = useState("");
 
   const handleName = (e) => {
-    setUserName({ ...userName, name: e.target.value });
+    setUserName(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -23,7 +23,7 @@ const Start = () => {
 
       <form>
         <label htmlFor="name">What's your name?</label>
-        <input name="name" value={userName.name || ""} onChange={handleName} />
+        <input name="name" value={userName || ""} onChange={handleName} />
 
         <button onClick={handleSubmit}>Let's Go!</button>
       </form>
