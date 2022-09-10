@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  monthlyIncome: 0,
-  monthlyExpenses: 0,
-};
-
 export const moneySlice = createSlice({
   name: "money",
-  initialState,
+  initialState: {
+    monthlyIncome: 0,
+    monthlyExpenses: 0,
+  },
   reducers: {
     setIncome: (state, action) => {
       state.monthlyIncome = action.payload;
