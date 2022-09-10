@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setName } from "../redux/user";
+import { useNavigate } from "react-router-dom";
 
 const Start = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
 
   const handleName = (e) => {
@@ -13,7 +15,8 @@ const Start = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setName(userName));
+      dispatch(setName(userName));
+      navigate('/income')
   };
 
   return (

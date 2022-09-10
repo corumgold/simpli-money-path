@@ -4,6 +4,8 @@ export const userSlice = createSlice({
   name: "user",
   initialState: {
     name: "",
+    monthlyIncome: 0,
+    monthlyExpenses: 0,
   },
   reducers: {
     setName: (state, action) => {
@@ -18,5 +20,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setName } = userSlice.actions;
+export const { setName, setIncome, setExpenses } = userSlice.actions;
 export default userSlice.reducer;

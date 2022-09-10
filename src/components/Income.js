@@ -1,31 +1,51 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { setName } from "../redux/money";
+import { setIncome } from "../redux/user";
 import { useNavigate } from "react-router-dom";
 
 const Income = () => {
-    const userName = useSelector((state) => state);
-    console.log(userName)
-
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
+  console.log(user)
 
-  const [userIncome, setUserIncome] = useState({ monthlyIncome: "" });
+  const name = useSelector((state) => state.user.name);
+  const [userIncome, setUserIncome] = useState({
+    salary: 0,
+    disability: 0,
+    alimonyChildSupport: 0,
+    other: 0,
+  });
 
-  const handleName = (e) => {
-    // setUserName({ ...userName, name: e.target.value });
+  const handleSalary = (e) => {
+    setUserIncome({ ...userIncome, salary: e.target.value });
+  };
+
+  const handleDisability = (e) => {
+    setUserIncome({ ...userIncome, disability: e.target.value });
+  };
+
+  const handleACS = (e) => {
+    setUserIncome({ ...userIncome, alimonyChildSupport: e.target.value });
+  };
+
+  const handleOther = (e) => {
+    setUserIncome({ ...userIncome, other: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(setName(userName));
-    navigate("/income");
+    const total = Object.values(userIncome).reduce(
+      (acc, curr) => acc + +curr,
+      0
+    );
+    dispatch(setIncome(total));
   };
 
   return (
     <>
-      <h2>Okay {userName}, it's time to get a little personal.</h2>
+      <h2>Okay {name}, it's time to get a little personal.</h2>
       <h3>
         I need to know what your total monthly GROSS income is (this is the
         amount of money you make after taxes).
@@ -43,8 +63,29 @@ const Income = () => {
       </h3>
 
       <form>
-        <label htmlFor="name">What's your gross monthly income?</label>
-        <input name="name" value={userName.name || ""} onChange={handleName} />
+        <label htmlFor="salary">Salary: </label>
+        <input
+          name="salary"
+          value={userIncome.salary}
+          onChange={handleSalary}
+        />
+
+        <label htmlFor="disability">Disability: </label>
+        <input
+          name="disability"
+          value={userIncome.disability}
+          onChange={handleDisability}
+        />
+
+        <label htmlFor="acs">Alimony/Child Support: </label>
+        <input
+          name="acs"
+          value={userIncome.alimonyChildSupport}
+          onChange={handleACS}
+        />
+
+        <label htmlFor="other">Other: </label>
+        <input name="other" value={userIncome.other} onChange={handleOther} />
 
         <button onClick={handleSubmit}>Let's Go!</button>
       </form>
