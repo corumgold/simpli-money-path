@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Start, Income, Expenses } from "./components";
+import { Start, Income, Expenses, Debts, ExOverIn } from "./components";
 
 function App() {
   return (
@@ -9,6 +9,8 @@ function App() {
         <Route index element={<Start />} />
         <Route path="/income" element={<Income />} />
         <Route path="/expenses" element={<Expenses />} />
+        <Route path="/debts" element={<Debts />} />
+        <Route path="/stop" element={<ExOverIn />} />
       </Routes>
     </>
   );

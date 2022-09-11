@@ -9,8 +9,8 @@ const Expenses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-    const user = useSelector((state) => state.user);
-    console.log(user)
+  const user = useSelector((state) => state.user);
+  console.log(user);
 
   const [userExpenses, setUserExpenses] = useState({
     housing: 0,
@@ -52,6 +52,9 @@ const Expenses = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setExpenses(+totalExpenses));
+    if (user.monthlyExpenses > user.monthlyIncome) {
+      navigate("/stop");
+    } else navigate("/debts");
   };
 
   return (
