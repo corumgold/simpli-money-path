@@ -15,7 +15,7 @@ export const userSlice = createSlice({
       state.monthlyIncome = action.payload;
     },
     setExpenses: (state, action) => {
-      state.monthlyIncome = action.payload;
+      state.monthlyExpenses = action.payload;
     },
   },
 });

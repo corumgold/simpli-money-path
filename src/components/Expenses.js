@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { setIncome } from "../redux/user";
+import { setExpenses } from "../redux/user";
 import { useNavigate } from "react-router-dom";
 import { formatter } from "../helperFuncs";
 
@@ -9,8 +9,9 @@ const Expenses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.user);
-  console.log(user);
+    const user = useSelector((state) => state.user);
+    console.log(user)
+
   const [userExpenses, setUserExpenses] = useState({
     housing: 0,
     transportation: 0,
@@ -26,76 +27,67 @@ const Expenses = () => {
     other: 0,
   });
 
-  const handleChange = (prop) => (event) => {
+  const [totalExpenses, setTotalExpenses] = useState(0);
+
+  const handleChange = (prop) => (e) => {
     setUserExpenses({
       ...userExpenses,
-      [prop]: event.target.value,
+      [prop]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleTotalBudget = (e) => {
     e.preventDefault();
     const total = Object.values(userExpenses).reduce(
       (acc, curr) => acc + +curr,
       0
     );
-    dispatch(setIncome(total));
-    navigate("/expenses");
+    setTotalExpenses(total);
+  };
+
+  const handleTotal = (e) => {
+    setTotalExpenses(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setExpenses(+totalExpenses));
   };
 
   return (
     <>
       <h2>
         So it looks like you make around {formatter.format(user.monthlyIncome)}{" "}
-        every month
+        every month.
       </h2>
       <h3>
-        I need to know what your total monthly GROSS income is (this is the
-        amount of money you make after taxes).
-      </h3>
-      <h3>
-        If you don't know how much that is, check out this{" "}
-        <a
-          href="https://smartasset.com/taxes/paycheck-calculator"
-          target="_blank"
-          rel="noreferrer"
-        >
-          great tool
-        </a>{" "}
-        to get your after tax income, then meet me back here!
+        Up next, we need to figure out what your average monthly expenses are.
+        If you are used to budgeting, you may know how much you spend every
+        month already. However, if not, you can use the tool below.
       </h3>
 
-      {/* <form>
-        <label htmlFor="salary">Salary: </label>
-        <input
-          name="salary"
-          value={userIncome.salary}
-          onChange={handleChange("salary")}
-        />
+      <form>
+        {Object.keys(userExpenses).map((expense) => {
+          return (
+            <div key={expense}>
+              <label htmlFor={expense}>{expense}:</label>
+              <input
+                name={expense}
+                value={userExpenses[expense]}
+                onChange={handleChange(expense)}
+              ></input>
+            </div>
+          );
+        })}
 
-        <label htmlFor="disability">Disability: </label>
-        <input
-          name="disability"
-          value={userIncome.disability}
-          onChange={handleChange("disability")}
-        />
+        <button onClick={handleTotalBudget}>Totalize</button>
+      </form>
 
-        <label htmlFor="acs">Alimony/Child Support: </label>
-        <input
-          name="acs"
-          value={userIncome.alimonyChildSupport}
-          onChange={handleChange("alimonyChildSupport")}
-        />
-
-        <label htmlFor="other">Other: </label>
-        <input
-          name="other"
-          value={userIncome.other}
-          onChange={handleChange("other")}
-        />
-
+      <form>
+        <label htmlFor="total">Total: </label>
+        <input name="total" value={totalExpenses} onChange={handleTotal} />
         <button onClick={handleSubmit}>Continue</button>
-      </form> */}
+      </form>
     </>
   );
 };
