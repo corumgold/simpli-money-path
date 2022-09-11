@@ -3,30 +3,39 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setIncome } from "../redux/user";
 import { useNavigate } from "react-router-dom";
+import { formatter } from "../helperFuncs";
 
-const Income = () => {
+const Expenses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const user = useSelector((state) => state.user);
-  const [userIncome, setUserIncome] = useState({
-    salary: 0,
-    disability: 0,
-    alimonyChildSupport: 0,
+  console.log(user);
+  const [userExpenses, setUserExpenses] = useState({
+    housing: 0,
+    transportation: 0,
+    food: 0,
+    utilities: 0,
+    medical: 0,
+    insurance: 0,
+    householdSupplies: 0,
+    entertainment: 0,
+    gifts: 0,
+    debtPayments: 0,
+    savings: 0,
     other: 0,
   });
 
-
   const handleChange = (prop) => (event) => {
-    setUserIncome({
-      ...userIncome,
+    setUserExpenses({
+      ...userExpenses,
       [prop]: event.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const total = Object.values(userIncome).reduce(
+    const total = Object.values(userExpenses).reduce(
       (acc, curr) => acc + +curr,
       0
     );
@@ -36,7 +45,10 @@ const Income = () => {
 
   return (
     <>
-      <h2>Okay {user.name}, it's time to get a little personal.</h2>
+      <h2>
+        So it looks like you make around {formatter.format(user.monthlyIncome)}{" "}
+        every month
+      </h2>
       <h3>
         I need to know what your total monthly GROSS income is (this is the
         amount of money you make after taxes).
@@ -53,7 +65,7 @@ const Income = () => {
         to get your after tax income, then meet me back here!
       </h3>
 
-      <form>
+      {/* <form>
         <label htmlFor="salary">Salary: </label>
         <input
           name="salary"
@@ -83,9 +95,9 @@ const Income = () => {
         />
 
         <button onClick={handleSubmit}>Continue</button>
-      </form>
+      </form> */}
     </>
   );
 };
 
-export default Income;
+export default Expenses;
