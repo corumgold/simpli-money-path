@@ -6,6 +6,7 @@ export const userSlice = createSlice({
     name: "",
     monthlyIncome: 0,
     monthlyExpenses: 0,
+    debt: 0,
   },
   reducers: {
     setName: (state, action) => {
@@ -17,8 +18,11 @@ export const userSlice = createSlice({
     setExpenses: (state, action) => {
       state.monthlyExpenses = action.payload;
     },
+    setDebt: (state, action) => {
+      state.debt = action.payload;
+    },
   },
 });
 
-export const { setName, setIncome, setExpenses } = userSlice.actions;
+export const { setName, setIncome, setExpenses, setDebt } = userSlice.actions;
 export default userSlice.reducer;
