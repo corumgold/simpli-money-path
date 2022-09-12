@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { formatter } from "../helperFuncs";
@@ -8,13 +8,18 @@ const HighInterestDebt = () => {
 
   const user = useSelector((state) => state.user);
 
-  if (!user.debt) {
-    navigate("/emergency-fund");
-  }
-
   const handleClick = () => {
     navigate("/emergency-fund");
   };
+
+  if (!user.debt) {
+    return (
+      <>
+        <h2>Since you don't have any debt, you can skip this part!</h2>
+        <button onClick={handleClick}>Move Forward</button>
+      </>
+    );
+  }
 
   return (
     <>
