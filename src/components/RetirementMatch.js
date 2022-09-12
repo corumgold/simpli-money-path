@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const RetirementMatch = () => {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    // navigate("/retirement-match");
+    navigate("/high-interest-debt");
   };
 
   return (
