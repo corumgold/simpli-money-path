@@ -9,8 +9,7 @@ const Expenses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.user);
-  console.log(user);
+  let user = useSelector((state) => state.user);
 
   const [userExpenses, setUserExpenses] = useState({
     housing: 0,
@@ -49,12 +48,9 @@ const Expenses = () => {
     setTotalExpenses(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
     dispatch(setExpenses(+totalExpenses));
-    if (user.monthlyExpenses > user.monthlyIncome) {
-      navigate("/stop");
-    } else navigate("/debts");
+    navigate("/debts");
   };
 
   return (
