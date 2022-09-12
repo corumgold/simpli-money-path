@@ -9,7 +9,7 @@ const Debts = () => {
   const navigate = useNavigate();
 
   const user = useSelector((state) => state.user);
-  console.log(user)
+  console.log(user);
 
   const [userDebts, setUserDebts] = useState({
     autoLoan: 0,
@@ -49,7 +49,7 @@ const Debts = () => {
       <form>
         {Object.keys(userDebts).map((debt) => {
           return (
-            <div key={debt}>
+            <div className="form-item" key={debt}>
               <label htmlFor={debt}>{debt}:</label>
               <input
                 name={debt}

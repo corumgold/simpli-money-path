@@ -1,0 +1,35 @@
+@import "./tools/colors.less";
+@import "./tools/mixins.less";
+
+form {
+  .flexCenter();
+  text-align: start;
+  flex-direction: column;
+}
+
+form * {
+  margin-top: 0.5em;
+}
+
+input {
+  background-color: transparent;
+  border: 1px solid @primary-text-color;
+  border-radius: 5px;
+  caret-color: @accent-color;
+  color: @accent-color;
+  text-align: center;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.form-item {
+  .flexCenter();
+  flex-direction: column;
+}
+
+input {
+    width: 100px;
+}

@@ -1,0 +1,33 @@
+@import "./tools/colors.less";
+@import "./tools/mixins.less";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,900;1,200;1,400;1,600;1,900&display=swap");
+
+@import './form.less';
+
+body {
+  margin: 0;
+  padding: 1.5em;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: @primary-color;
+  color: @primary-text-color;
+  .flexCenter();
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: @accent-color;
+    font-weight: 600;
+}
+
+

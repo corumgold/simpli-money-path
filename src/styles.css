@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqw16aX8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC70w-.ttf) format('truetype');
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  flex-direction: column;
+}
+form * {
+  margin-top: 0.5em;
+}
+input {
+  background-color: transparent;
+  border: 1px solid #fdfffc;
+  border-radius: 5px;
+  caret-color: #8ac926;
+  color: #8ac926;
+  text-align: center;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+.form-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input {
+  width: 100px;
+}
+body {
+  margin: 0;
+  padding: 1.5em;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #353535;
+  color: #fdfffc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: #8ac926;
+  font-weight: 600;
+}

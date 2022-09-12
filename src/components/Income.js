@@ -16,7 +16,6 @@ const Income = () => {
     other: 0,
   });
 
-
   const handleChange = (prop) => (event) => {
     setUserIncome({
       ...userIncome,
@@ -54,33 +53,18 @@ const Income = () => {
       </h3>
 
       <form>
-        <label htmlFor="salary">Salary: </label>
-        <input
-          name="salary"
-          value={userIncome.salary}
-          onChange={handleChange("salary")}
-        />
-
-        <label htmlFor="disability">Disability: </label>
-        <input
-          name="disability"
-          value={userIncome.disability}
-          onChange={handleChange("disability")}
-        />
-
-        <label htmlFor="acs">Alimony/Child Support: </label>
-        <input
-          name="acs"
-          value={userIncome.alimonyChildSupport}
-          onChange={handleChange("alimonyChildSupport")}
-        />
-
-        <label htmlFor="other">Other: </label>
-        <input
-          name="other"
-          value={userIncome.other}
-          onChange={handleChange("other")}
-        />
+        {Object.keys(userIncome).map((source) => {
+          return (
+            <div className="form-item" key={source}>
+              <label htmlFor={source}>{source}:</label>
+              <input
+                name={source}
+                value={userIncome[source]}
+                onChange={handleChange(source)}
+              ></input>
+            </div>
+          );
+        })}
 
         <button onClick={handleSubmit}>Continue</button>
       </form>

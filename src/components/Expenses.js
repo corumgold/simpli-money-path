@@ -68,7 +68,7 @@ const Expenses = () => {
       <form>
         {Object.keys(userExpenses).map((expense) => {
           return (
-            <div key={expense}>
+            <div className='form-item' key={expense}>
               <label htmlFor={expense}>{expense}:</label>
               <input
                 name={expense}
