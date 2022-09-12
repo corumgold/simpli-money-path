@@ -4,12 +4,12 @@ import { initEmergencyCalc } from "../helperFuncs";
 import { useNavigate } from "react-router-dom";
 
 const InitialEmergency = () => {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const user = useSelector((state) => state.user);
 
-    const handleClick = () => {
-    //   navigate('/401k-match')
+  const handleClick = () => {
+    navigate("/retirement-match");
   };
 
   return (

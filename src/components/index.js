@@ -4,4 +4,5 @@ export { default as Expenses } from "./Expenses";
 export { default as Debts } from "./debt-stop-split/Debts";
 export { default as ExOverIn } from "./debt-stop-split/ExOverIn";
 export { default as InitialEmergency } from "./InitialEmergency"
+export { default as RetirementMatch } from "./RetirementMatch"
 

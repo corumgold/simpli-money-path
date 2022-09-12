@@ -7,6 +7,7 @@ import {
   Debts,
   ExOverIn,
   InitialEmergency,
+  RetirementMatch,
 } from "./components";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/debts" element={<Debts />} />
         <Route path="/stop" element={<ExOverIn />} />
         <Route path="/initial-emergency-fund" element={<InitialEmergency />} />
+        <Route path="/retirement-match" element={<RetirementMatch />} />
       </Routes>
     </>
   );
