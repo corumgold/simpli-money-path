@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { initEmergencyCalc } from "../helperFuncs";
+import { EmergencyCalc } from "../helperFuncs";
 import { useNavigate } from "react-router-dom";
 
 const InitialEmergency = () => {
@@ -26,8 +26,8 @@ const InitialEmergency = () => {
       <h4>
         If you have $1000 saved - great! You can continue on! If not, that is
         your next task! Based on your prior answers, this should take you around{" "}
-        {initEmergencyCalc(user)} months to complete! Once you have your initial
-        emergency fund saved, meet us back here to move on!
+        {EmergencyCalc(user, 1000)} months to complete! Once you have your
+        initial emergency fund saved, meet us back here to move on!
       </h4>
       <button onClick={handleClick}>Move Forward</button>
     </>

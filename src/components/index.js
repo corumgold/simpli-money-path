@@ -6,4 +6,5 @@ export { default as ExOverIn } from "./debt-stop-split/ExOverIn";
 export { default as InitialEmergency } from "./InitialEmergency"
 export { default as RetirementMatch } from "./RetirementMatch"
 export { default as HighInterestDebt } from "./HighInterestDebt"
+export { default as Emergency } from "./Emergency"
 

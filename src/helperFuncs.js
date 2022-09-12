@@ -3,7 +3,7 @@ export const formatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-export const initEmergencyCalc = function (user) {
-  const unrounded = 1000 / (user.monthlyIncome - user.monthlyExpenses);
+export const EmergencyCalc = function (user, amtToSave) {
+  const unrounded = amtToSave / (user.monthlyIncome - user.monthlyExpenses);
   return Math.round(unrounded * 10) / 10;
 };

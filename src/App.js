@@ -9,6 +9,7 @@ import {
   InitialEmergency,
   RetirementMatch,
   HighInterestDebt,
+  Emergency,
 } from "./components";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/initial-emergency-fund" element={<InitialEmergency />} />
         <Route path="/retirement-match" element={<RetirementMatch />} />
         <Route path="/high-interest-debt" element={<HighInterestDebt />} />
+        <Route path="/emergency-fund" element={<Emergency />} />
       </Routes>
     </>
   );
