@@ -32,7 +32,7 @@ const Debts = () => {
       0
     );
     dispatch(setDebt(total));
-    // navigate("/expenses");
+    navigate("/initial-emergency-fund");
   };
 
   if (user.monthlyExpenses > user.monthlyIncome) {
