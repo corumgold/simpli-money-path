@@ -11,10 +11,10 @@ const Income = () => {
   const user = useSelector((state) => state);
 
   const [userIncome, setUserIncome] = useState({
-    salary: 0,
-    disability: 0,
-    alimonyChildSupport: 0,
-    other: 0,
+    Salary: 0,
+    Disability: 0,
+    "Alimony/Child Support": 0,
+    Other: 0,
   });
 
   const handleChange = (prop) => (event) => {
@@ -38,8 +38,8 @@ const Income = () => {
     <>
       <h1>Okay {user.name}, it's time to get a little personal.</h1>
       <h2>
-        I need to know what your total monthly GROSS income is (this is the
-        amount of money you make after taxes).
+        I need to know what your monthly GROSS income is (the amount of money
+        you make after taxes).
       </h2>
       <h2>
         If you don't know how much that is, check out this{" "}
@@ -50,7 +50,7 @@ const Income = () => {
         >
           great tool
         </a>{" "}
-        to get your after tax income, then meet me back here!
+        to get your after tax income - we'll meet you back here!
       </h2>
 
       <form>
