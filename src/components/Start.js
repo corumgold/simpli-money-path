@@ -21,15 +21,18 @@ const Start = () => {
 
   return (
     <>
-      <h1>69% of Americans aren't saving enough for retirement*</h1>
-      <h2>If you're one of those, today that changes.</h2>
+      <h1>69% of Americans aren't saving enough to ever retire*</h1>
+      <h1>56% couldn't pay for a $1,000 emergency*</h1>
+
+      <h2>If that sounds like you, today that changes.</h2>
 
       <form>
         <label htmlFor="name">What's your name?</label>
         <input name="name" value={userName || ""} onChange={handleName} />
 
-        <button onClick={handleSubmit}>Let's Go!</button>
+        <button onClick={handleSubmit}>Let's Do This!</button>
       </form>
+      <p>*Bankrate</p>
     </>
   );
 };
