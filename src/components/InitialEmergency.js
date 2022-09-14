@@ -14,22 +14,18 @@ const InitialEmergency = () => {
 
   return (
     <>
+      <h1>Thanks for those details, {user.name}!</h1>
       <h2>
-        Thank you for taking the time to give us that information! Now let's get
-        you where you need to be...
+        Our first step is setting aside a small emergency fund of <span>$1,000</span>. This
+        money will prevent you from taking on MORE debt for common emergencies
+        such as vehicle repairs, vet visits, etc.
       </h2>
       <h3>
-        A great first step is a small emergency fund of $1000. This will prevent
-        you from having to use a credit card for common emergencies such as
-        vehicle repairs, vet visits, etc.
+        If you have $1000 saved - continue on! If not, based on your prior answers, this should take you around{" "}
+        <span>{EmergencyCalc(user, 1000)} months</span> to complete! After
+        that, meet us back here to move on.
       </h3>
-      <h4>
-        If you have $1000 saved - great! You can continue on! If not, that is
-        your next task! Based on your prior answers, this should take you around{" "}
-        {EmergencyCalc(user, 1000)} months to complete! Once you have your
-        initial emergency fund saved, meet us back here to move on!
-      </h4>
-      <button onClick={handleClick}>Move Forward</button>
+      <button onClick={handleClick}>$1,000 Saved!</button>
     </>
   );
 };

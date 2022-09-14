@@ -43,7 +43,7 @@ const Debts = () => {
     <>
       <h1>Let's talk about the REAL four letter word... "debt"</h1>
       <h2>
-        Odds are, you have some form of debt - 77% of American households
+        Odds are, you have some form of debt - <span>77%</span> of American households
         do!*
       </h2>
       <h2>Use the form below to input any debts you may have.</h2>
