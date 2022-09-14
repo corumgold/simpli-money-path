@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { setIncome } from "../redux/user";
+import { setIncome, setCurrentStep } from "../redux/user";
 import { useNavigate } from "react-router-dom";
 
 const Income = () => {
@@ -31,6 +31,7 @@ const Income = () => {
       0
     );
     dispatch(setIncome(total));
+    dispatch(setCurrentStep("expenses"));
     navigate("/expenses");
   };
 

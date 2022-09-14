@@ -17,25 +17,26 @@ const Emergency = () => {
 
   return (
     <>
+      <h1>Okay, {user.name} - let's go back to the emergency fund</h1>
       <h2>
-        So, at this point you have some extra cash ready for a small emergency,
-        but what if you run into a larger emergency like the loss of a job or a
-        serious accident or illness?
+        You have some cash ready for a small emergency, but what if you run into
+        a larger emergency like the loss of a job or a serious accident/illness?
       </h2>
       <h3>
-        That's why it's recommended that you have somewhere between 3 and 6
-        months expenses {formatter.format(threeMonths)} -{" "}
-        {formatter.format(sixMonths)} in a savings account ready if you ever
-        need it.
+        It's recommended that you have somewhere between 3 and 6 months expenses{" "}
+        ({formatter.format(threeMonths)} - {formatter.format(sixMonths)})* in a
+        savings account ready if you ever need it.
       </h3>
       <h4>
-        If you currently have an amount you feel comfortable with available, you
-        can continue on! If not, that is your next task! Based on your prior
-        answers, this should take you around {EmergencyCalc(user, threeMonths)}{" "}
-        months - {EmergencyCalc(user, sixMonths)} months to complete! Once you
-        have your full emergency fund saved, meet us back here to move on!
+        Based on your prior answers, this should take you around{" "}
+        <span>
+          {EmergencyCalc(user, threeMonths - 1000)} -{" "}
+          {EmergencyCalc(user, sixMonths - 1000)} months
+        </span>{" "}
+        to complete!
       </h4>
-      <button onClick={handleClick}>Continue On</button>
+      <button onClick={handleClick}>I'm Fully Funded!</button>
+      <p>*Wells Fargo</p>
     </>
   );
 };

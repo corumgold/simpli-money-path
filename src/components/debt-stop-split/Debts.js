@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ExOverIn from "./ExOverIn";
-import { setDebt } from "../../redux/user";
+import { setCurrentStep, setDebt } from "../../redux/user";
 
 const Debts = () => {
   const dispatch = useDispatch();
@@ -32,6 +32,7 @@ const Debts = () => {
       0
     );
     dispatch(setDebt(total));
+    dispatch(setCurrentStep("initial emergency"));
     navigate("/initial-emergency-fund");
   };
 
@@ -43,8 +44,8 @@ const Debts = () => {
     <>
       <h1>Let's talk about the REAL four letter word... "debt"</h1>
       <h2>
-        Odds are, you have some form of debt - <span>77%</span> of American households
-        do!*
+        Odds are, you have some form of debt - <span>77%</span> of American
+        households do!*
       </h2>
       <h2>Use the form below to input any debts you may have.</h2>
       <form>

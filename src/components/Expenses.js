@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { setExpenses } from "../redux/user";
+import { setCurrentStep, setExpenses } from "../redux/user";
 import { useNavigate } from "react-router-dom";
 import { formatter } from "../helperFuncs";
 
@@ -49,6 +49,7 @@ const Expenses = () => {
 
   const handleSubmit = async (e) => {
     dispatch(setExpenses(+totalExpenses));
+    dispatch(setCurrentStep("debts"));
     navigate("/debts");
   };
 
@@ -59,11 +60,13 @@ const Expenses = () => {
         {formatter.format(user.monthlyIncome)} - Sound right?
       </h2>
       <h3>
-        Up next, we need to figure out what you typically spend in a month.
-        If you aren't used to budgeting, you can use the tool below to get an
+        Up next, we need to figure out what you typically spend in a month. If
+        you aren't used to budgeting, you can use the tool below to get an
         estimate on monthly spending!
       </h3>
-      <h3>Otherwise, simply input your monthly spending manually at the bottom.</h3>
+      <h3>
+        Otherwise, simply input your monthly spending manually at the bottom.
+      </h3>
 
       <form>
         {Object.keys(userExpenses).map((expense) => {
