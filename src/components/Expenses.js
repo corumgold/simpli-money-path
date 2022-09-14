@@ -9,7 +9,7 @@ const Expenses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  let user = useSelector((state) => state.user);
+  let user = useSelector((state) => state);
 
   const [userExpenses, setUserExpenses] = useState({
     housing: 0,

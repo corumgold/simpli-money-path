@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Emergency = () => {
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state);
 
   const handleClick = () => {
     // navigate("/retirement-match");

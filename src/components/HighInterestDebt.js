@@ -6,7 +6,7 @@ import { formatter } from "../helperFuncs";
 const HighInterestDebt = () => {
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state);
 
   const handleClick = () => {
     navigate("/emergency-fund");

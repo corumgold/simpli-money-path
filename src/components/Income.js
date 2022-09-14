@@ -8,7 +8,8 @@ const Income = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state);
+
   const [userIncome, setUserIncome] = useState({
     salary: 0,
     disability: 0,
@@ -35,12 +36,12 @@ const Income = () => {
 
   return (
     <>
-      <h2>Okay {user.name}, it's time to get a little personal.</h2>
-      <h3>
+      <h1>Okay {user.name}, it's time to get a little personal.</h1>
+      <h2>
         I need to know what your total monthly GROSS income is (this is the
         amount of money you make after taxes).
-      </h3>
-      <h3>
+      </h2>
+      <h2>
         If you don't know how much that is, check out this{" "}
         <a
           href="https://smartasset.com/taxes/paycheck-calculator"
@@ -50,7 +51,7 @@ const Income = () => {
           great tool
         </a>{" "}
         to get your after tax income, then meet me back here!
-      </h3>
+      </h2>
 
       <form>
         {Object.keys(userIncome).map((source) => {
