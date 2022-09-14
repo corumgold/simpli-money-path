@@ -12,18 +12,17 @@ const Expenses = () => {
   let user = useSelector((state) => state);
 
   const [userExpenses, setUserExpenses] = useState({
-    housing: 0,
-    transportation: 0,
-    food: 0,
-    utilities: 0,
-    medical: 0,
-    insurance: 0,
-    householdSupplies: 0,
-    entertainment: 0,
-    gifts: 0,
-    debtPayments: 0,
-    savings: 0,
-    other: 0,
+    Housing: 0,
+    Transportation: 0,
+    Food: 0,
+    Utilities: 0,
+    Medical: 0,
+    Insurance: 0,
+    "Household Supplies": 0,
+    Entertainment: 0,
+    Gifts: 0,
+    "Debt Payments": 0,
+    Other: 0,
   });
 
   const [totalExpenses, setTotalExpenses] = useState(0);
@@ -56,19 +55,20 @@ const Expenses = () => {
   return (
     <>
       <h2>
-        So it looks like you make around {formatter.format(user.monthlyIncome)}{" "}
-        every month.
+        So, an average month for {user.name} looks like{" "}
+        {formatter.format(user.monthlyIncome)} - Sound right?
       </h2>
       <h3>
-        Up next, we need to figure out what your average monthly expenses are.
-        If you are used to budgeting, you may know how much you spend every
-        month already. However, if not, you can use the tool below.
+        Up next, we need to figure out what you typically spend in a month.
+        If you aren't used to budgeting, you can use the tool below to get an
+        estimate on monthly spending!
       </h3>
+      <h3>Otherwise, simply input your monthly spending manually at the bottom.</h3>
 
       <form>
         {Object.keys(userExpenses).map((expense) => {
           return (
-            <div className='form-item' key={expense}>
+            <div className="form-item" key={expense}>
               <label htmlFor={expense}>{expense}:</label>
               <input
                 name={expense}
@@ -81,9 +81,8 @@ const Expenses = () => {
 
         <button onClick={handleTotalBudget}>Totalize</button>
       </form>
-
       <form>
-        <label htmlFor="total">Total: </label>
+        <label htmlFor="total">Total Expenses: </label>
         <input name="total" value={totalExpenses} onChange={handleTotal} />
         <button onClick={handleSubmit}>Continue</button>
       </form>

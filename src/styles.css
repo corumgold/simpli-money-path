@@ -58,8 +58,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: start;
   flex-direction: column;
+  min-width: 300px;
 }
 form * {
   margin-top: 0.5em;
@@ -71,6 +71,7 @@ input {
   caret-color: #8ac926;
   color: #8ac926;
   text-align: center;
+  max-width: 50px;
 }
 textarea:focus,
 input:focus {
@@ -78,9 +79,9 @@ input:focus {
 }
 .form-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 250px;
 }
 input {
   width: 100px;
