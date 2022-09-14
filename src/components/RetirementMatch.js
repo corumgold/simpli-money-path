@@ -10,17 +10,18 @@ const RetirementMatch = () => {
 
   return (
     <>
-      <h2>Now on to the fun stuff - retirement!</h2>
+      <h1>Now on to the fun stuff - retirement!</h1>
+      <h2>
+        Does your employer offer a 401k plan with a match? If so, let's make
+        sure you are contributing <span>ONLY</span> enough to get the full
+        match. This is <span>FREE MONEY</span> from your employer, and we would
+        hate for you to miss out on it!
+      </h2>
       <h3>
-        Does your employer offer a 401k plan with an employer match? If so, at
-        this point, let's make sure you are contributing ONLY as much as you
-        need to in order to get the full employer match. This is basically FREE
-        MONEY from your employer, and we would hate for you to miss out on it!
-        If you have questions on how to participate, you can usually consult
-        with your HR representative.
+        If you have questions on how to participate, try consulting with your HR
+        representative.
       </h3>
-      <h3>Once that's all in order, go ahead and move on!</h3>
-      <button onClick={handleClick}>Keep going!</button>
+      <button onClick={handleClick}>I'm matched!</button>
     </>
   );
 };
