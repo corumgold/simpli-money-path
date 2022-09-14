@@ -12,10 +12,10 @@ const Debts = () => {
   console.log(user);
 
   const [userDebts, setUserDebts] = useState({
-    autoLoan: 0,
-    creditCards: 0,
-    studentLoans: 0,
-    other: 0,
+    "Auto Loan(s)": 0,
+    "Credit Card(s)": 0,
+    "Student Loan(s)": 0,
+    Other: 0,
   });
 
   const handleChange = (prop) => (e) => {
@@ -41,11 +41,12 @@ const Debts = () => {
 
   return (
     <>
-      <h2>Let's talk about the REAL four letter word... debt</h2>
-      <h3>
-        The odds are, you have some form of debt - 77% of American households
-        do!
-      </h3>
+      <h1>Let's talk about the REAL four letter word... "debt"</h1>
+      <h2>
+        Odds are, you have some form of debt - 77% of American households
+        do!*
+      </h2>
+      <h2>Use the form below to input any debts you may have.</h2>
       <form>
         {Object.keys(userDebts).map((debt) => {
           return (
@@ -59,9 +60,9 @@ const Debts = () => {
             </div>
           );
         })}
-
         <button onClick={handleSubmit}>Continue</button>
       </form>
+      <p>*2020 Federal Reserve Bulletin</p>
     </>
   );
 };
