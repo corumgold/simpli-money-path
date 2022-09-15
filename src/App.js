@@ -11,6 +11,7 @@ import {
   HighInterestDebt,
   Emergency,
   ModerateInterestDebt,
+  Retirement,
 } from "./components";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           path="/moderate-interest-debt"
           element={<ModerateInterestDebt />}
         />
+        <Route path="/retirement" element={<Retirement />} />
       </Routes>
     </>
   );

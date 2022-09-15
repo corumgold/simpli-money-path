@@ -15,7 +15,6 @@ const Start = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const user = useSelector((state) => state);
-  console.log(user);
 
   const handleName = (e) => {
     setUserName(e.target.value);

@@ -11,11 +11,10 @@ const HighInterestDebt = () => {
   const user = useSelector((state) => state);
   const [remainingDebt, setRemainingDebt] = useState(user.debt);
   const [debtSubmitted, setDebtSubmitted] = useState(false);
-  console.log(user);
 
   const handleClick = () => {
-    // dispatch(setCurrentStep("emergency fund"));
-    // navigate("/emergency-fund");
+    dispatch(setCurrentStep("retirement"));
+    navigate("/retirement");
   };
 
   const handleDebt = (e) => {
@@ -27,8 +26,6 @@ const HighInterestDebt = () => {
     dispatch(setDebt(remainingDebt));
     setDebtSubmitted(true);
   };
-
-  const handleSubmit = () => {};
 
   if (!user.debt) {
     return (
