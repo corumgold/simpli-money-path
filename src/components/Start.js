@@ -75,10 +75,9 @@ const Start = () => {
 
   return (
     <>
-      <h1>69% of Americans aren't saving enough to ever retire*</h1>
-      <h1>56% couldn't pay for a $1,000 emergency*</h1>
+      <h1>77% of Americans are anxious about their financial situation.*</h1>
 
-      <h2>If that sounds like you, today that changes.</h2>
+      <h2>If you feel the same way, today that changes.</h2>
 
       {!user.name ? (
         <form>
@@ -95,7 +94,7 @@ const Start = () => {
         </>
       )}
 
-      <p>*Bankrate</p>
+      <p>*Capital One & The Decision Lab</p>
     </>
   );
 };

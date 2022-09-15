@@ -116,3 +116,20 @@ a {
 span {
   color: #8ac926;
 }
+button {
+  border: 1px solid #fdfffc;
+  border-radius: 3px;
+  padding: 0.5em 0.75em;
+  font-style: inherit;
+  background: linear-gradient(to right, #8ac926 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+  color: #fdfffc;
+  cursor: pointer;
+  font: inherit;
+}
+button:hover {
+  background-position: left bottom;
+  color: #353535;
+}

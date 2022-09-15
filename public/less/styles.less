@@ -30,7 +30,26 @@ a {
   color: @accent-color;
   font-weight: 600;
 }
-
 span {
   color: @accent-color;
 }
+
+button {
+  border: 1px solid @primary-text-color;
+  border-radius: 3px;
+  padding: 0.5em 0.75em;
+  font-style: inherit;
+  background: linear-gradient(to right, @accent-color 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+  color: @primary-text-color;
+  cursor: pointer;
+  font: inherit
+}
+
+button:hover {
+  background-position: left bottom;
+  color: @primary-color;
+}
+

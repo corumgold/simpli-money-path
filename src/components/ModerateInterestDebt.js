@@ -33,7 +33,7 @@ const HighInterestDebt = () => {
   if (!user.debt) {
     return (
       <>
-        <h1>Since you don't have any debt, you can skip this part!</h1>
+        <h1>Congratulations! You're Debt Free!</h1>
         <button onClick={handleClick}>Move On</button>
       </>
     );
