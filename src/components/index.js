@@ -9,4 +9,5 @@ export { default as HighInterestDebt } from "./HighInterestDebt"
 export { default as Emergency } from "./Emergency"
 export { default as ModerateInterestDebt } from "./ModerateInterestDebt"
 export { default as Retirement } from "./Retirement"
+export { default as Finish } from "./Finish"
 

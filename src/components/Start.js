@@ -31,31 +31,34 @@ const Start = () => {
     e.preventDefault();
     switch (user.currentStep) {
       case "income":
-        navigate("./income");
+        navigate("/income");
         break;
       case "expenses":
-        navigate("./expenses");
+        navigate("/expenses");
         break;
       case "debts":
-        navigate("./debts");
+        navigate("/debts");
         break;
       case "initial emergency":
-        navigate("./initial-emergency-fund");
+        navigate("/initial-emergency-fund");
         break;
       case "401k match":
-        navigate("./retirement-match");
+        navigate("/retirement-match");
         break;
       case "high interest debt":
-        navigate("./high-interest-debt");
+        navigate("/high-interest-debt");
         break;
       case "emergency fund":
-        navigate("./emergency-fund");
+        navigate("/emergency-fund");
         break;
-        case "moderate interest debt":
-          navigate("./moderate-interest-debt");
-          break;
+      case "moderate interest debt":
+        navigate("/moderate-interest-debt");
+        break;
+      case "finish":
+        navigate("/finish");
+        break;
       default:
-        navigate("./income");
+        navigate("/income");
     }
   };
 

@@ -11,13 +11,13 @@ const RetirementMatch = () => {
   const user = useSelector((state) => state);
 
   const handleClick = () => {
-    // dispatch(setCurrentStep("high interest debt"));
-    // navigate("/high-interest-debt");
+    dispatch(setCurrentStep("finish"));
+    navigate("/finish");
   };
 
   return (
     <>
-      <h1>Time to put retirement on auto-pilot</h1>
+      <h1>Time to put retirement on auto-pilot.</h1>
       <h2>
         Face it - nobody wants to work forever, so <span>15%</span> is the magic
         number when it comes to retirement savings.*
