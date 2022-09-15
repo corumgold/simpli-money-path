@@ -60,6 +60,7 @@ const Income = () => {
             <div className="form-item" key={source}>
               <label htmlFor={source}>{source}:</label>
               <input
+                type="number"
                 name={source}
                 value={userIncome[source]}
                 onChange={handleChange(source)}

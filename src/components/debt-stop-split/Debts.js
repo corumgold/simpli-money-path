@@ -54,6 +54,7 @@ const Debts = () => {
             <div className="form-item" key={debt}>
               <label htmlFor={debt}>{debt}:</label>
               <input
+                type="number"
                 name={debt}
                 value={userDebts[debt]}
                 onChange={handleChange(debt)}
