@@ -16,7 +16,6 @@ const HighInterestDebt = () => {
   };
 
   if (!user.debt) {
-    navigate("/emergency-fund");
     return (
       <>
         <h1>Since you don't have any debt, you can skip this part!</h1>

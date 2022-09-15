@@ -7,4 +7,5 @@ export { default as InitialEmergency } from "./InitialEmergency"
 export { default as RetirementMatch } from "./RetirementMatch"
 export { default as HighInterestDebt } from "./HighInterestDebt"
 export { default as Emergency } from "./Emergency"
+export { default as ModerateInterestDebt } from "./ModerateInterestDebt"
 

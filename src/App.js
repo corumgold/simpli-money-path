@@ -10,6 +10,7 @@ import {
   RetirementMatch,
   HighInterestDebt,
   Emergency,
+  ModerateInterestDebt,
 } from "./components";
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
         <Route path="/retirement-match" element={<RetirementMatch />} />
         <Route path="/high-interest-debt" element={<HighInterestDebt />} />
         <Route path="/emergency-fund" element={<Emergency />} />
+        <Route
+          path="/moderate-interest-debt"
+          element={<ModerateInterestDebt />}
+        />
       </Routes>
     </>
   );

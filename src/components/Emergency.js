@@ -1,15 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { EmergencyCalc, formatter } from "../helperFuncs";
 import { useNavigate } from "react-router-dom";
+import { setCurrentStep } from "../redux/user";
 
 const Emergency = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const user = useSelector((state) => state);
 
   const handleClick = () => {
-    // navigate("/retirement-match");
+    dispatch(setCurrentStep("moderate interest debt"));
+    navigate("/moderate-interest-debt");
   };
 
   const threeMonths = user.monthlyExpenses * 3;

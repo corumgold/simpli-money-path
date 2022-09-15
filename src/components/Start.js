@@ -49,6 +49,12 @@ const Start = () => {
       case "high interest debt":
         navigate("./high-interest-debt");
         break;
+      case "emergency fund":
+        navigate("./emergency-fund");
+        break;
+        case "moderate interest debt":
+          navigate("./moderate-interest-debt");
+          break;
       default:
         navigate("./income");
     }
