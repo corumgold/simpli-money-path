@@ -10,6 +10,8 @@ const InitialEmergency = () => {
 
   const user = useSelector((state) => state);
 
+  const months = EmergencyCalc(user, 1000);
+
   const handleClick = () => {
     dispatch(setCurrentStep('401k match'))
     navigate("/retirement-match");
@@ -25,7 +27,7 @@ const InitialEmergency = () => {
       </h2>
       <h3>
         If you have $1000 saved - continue on! If not, based on your prior answers, this should take you around{" "}
-        <span>{EmergencyCalc(user, 1000)} months</span> to complete! After
+        <span>{months} {months <= 1 ? 'month' : 'months'}</span> to complete. After
         that, meet us back here to move on.
       </h3>
       <button onClick={handleClick}>$1,000 Saved!</button>

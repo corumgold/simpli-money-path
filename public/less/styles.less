@@ -16,13 +16,40 @@ body {
   min-height: 100vh;
 }
 
+#root {
+  margin: 4em 2em;
+}
+
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3 {
   font-weight: 500;
   margin-top: 0;
+}
+
+body {
+  font-size: 1.25em;
+  @media screen and (max-width: 1200px) {
+    font-size: 1.125em;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1em;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 0.75em;
+  }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
 }
 
 a {
@@ -45,7 +72,7 @@ button {
   transition: all 0.5s ease-out;
   color: @primary-text-color;
   cursor: pointer;
-  font: inherit
+  font: inherit;
 }
 
 button:hover {
@@ -53,3 +80,16 @@ button:hover {
   color: @primary-color;
 }
 
+.citation {
+  font-size: 0.75em;
+}
+
+.start-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-buttons button {
+  margin: 0 0.5rem;
+}

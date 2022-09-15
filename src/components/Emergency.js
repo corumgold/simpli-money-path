@@ -30,16 +30,16 @@ const Emergency = () => {
         ({formatter.format(threeMonths)} - {formatter.format(sixMonths)})* in a
         savings account ready if you ever need it.
       </h3>
-      <h4>
+      <h3>
         Based on your prior answers, this should take you around{" "}
         <span>
           {EmergencyCalc(user, threeMonths - 1000)} -{" "}
           {EmergencyCalc(user, sixMonths - 1000)} months
         </span>{" "}
         to complete!
-      </h4>
+      </h3>
       <button onClick={handleClick}>I'm Fully Funded!</button>
-      <p>*Wells Fargo</p>
+      <p className="citation">*Wells Fargo</p>
     </>
   );
 };

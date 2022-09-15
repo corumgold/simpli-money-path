@@ -2,13 +2,9 @@
 @import "./tools/mixins.less";
 
 form {
-  .flexCenter();
+  .flexCenter(); 
   flex-direction: column;
-  min-width: 300px
-}
-
-form * {
-  margin-top: 0.5em;
+  min-width: 300px;
 }
 
 input {
@@ -18,7 +14,18 @@ input {
   caret-color: @accent-color;
   color: @accent-color;
   text-align: center;
-  max-width: 50px;
+  width: 7em;
+  font: inherit;
+  margin: 0.75em;
+}
+
+label {
+  text-align: start;
+}
+
+.money-data input {
+  width: 5em;
+  margin: 0;
 }
 
 textarea:focus,
@@ -30,9 +37,11 @@ input:focus {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 250px;
+  width: 18em;
+  margin-bottom: 1em;
 }
 
-input {
-    width: 100px;
+form button {
+  margin: 1em;
 }
+

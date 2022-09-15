@@ -36,7 +36,7 @@ const RetirementMatch = () => {
         . (We suggest making this an automatic deduction!)
       </h3>
       <button onClick={handleClick}>All Set!</button>
-      <p>*Fidelity</p>
+      <p className="citation">*Fidelity</p>
     </>
   );
 };

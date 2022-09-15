@@ -42,7 +42,7 @@ const Income = () => {
         I need to know what your monthly GROSS income is (the amount of money
         you make after taxes).
       </h2>
-      <h2>
+      <h3>
         If you don't know how much that is, check out this{" "}
         <a
           href="https://smartasset.com/taxes/paycheck-calculator"
@@ -52,9 +52,9 @@ const Income = () => {
           great tool
         </a>{" "}
         to get your after tax income - we'll meet you back here!
-      </h2>
+      </h3>
 
-      <form>
+      <form className="money-data">
         {Object.keys(userIncome).map((source) => {
           return (
             <div className="form-item" key={source}>

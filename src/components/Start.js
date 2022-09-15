@@ -77,22 +77,32 @@ const Start = () => {
 
   return (
     <>
-      <h1>77% of Americans are anxious about their financial situation.*</h1>
-
-      <h2>If you feel the same way, today that changes.</h2>
-
       {!user.name ? (
-        <form>
-          <label htmlFor="name">What's your name?</label>
-          <input name="name" value={userName || ""} onChange={handleName} />
+        <>
+          <h1>
+            <span>77%</span> of Americans are anxious about their financial
+            situation.*
+          </h1>
 
-          <button onClick={handleSubmit}>Let's Do This!</button>
-        </form>
+          <h2>If you feel the same way, <span>today that changes</span>.</h2>
+          <form>
+            <label htmlFor="name">What's your name?</label>
+            <input name="name" value={userName || ""} onChange={handleName} />
+
+            <button onClick={handleSubmit}>Let's Do This!</button>
+          </form>
+        </>
       ) : (
         <>
-          <h2>Hello, {user.name}</h2>
-          <button onClick={handleContinue}>Continue</button>
-          <button onClick={handleRestart}>Restart</button>
+          <h1>Welcome back, {user.name}!</h1>
+          <h2>
+            Would you like to <span>continue</span> where you left off on your
+            journey or <span>start fresh</span>?
+          </h2>
+          <div className="start-buttons">
+            <button onClick={handleContinue}>Continue</button>
+            <button onClick={handleRestart}>Restart</button>
+          </div>
         </>
       )}
 

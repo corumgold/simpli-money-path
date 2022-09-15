@@ -48,7 +48,7 @@ const Debts = () => {
         households do!*
       </h2>
       <h2>Use the form below to input any debts you may have.</h2>
-      <form>
+      <form className="money-data">
         {Object.keys(userDebts).map((debt) => {
           return (
             <div className="form-item" key={debt}>
@@ -63,7 +63,7 @@ const Debts = () => {
         })}
         <button onClick={handleSubmit}>Continue</button>
       </form>
-      <p>*2020 Federal Reserve Bulletin</p>
+      <p className="citation">*2020 Federal Reserve Bulletin</p>
     </>
   );
 };
