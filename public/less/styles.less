@@ -2,10 +2,11 @@
 @import "./tools/mixins.less";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,900;1,200;1,400;1,600;1,900&display=swap");
 @import "./form.less";
+@import "./nav.less";
 
-// * {
-//   margin: 0;
-// }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -14,13 +15,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: @primary-color;
   color: @primary-text-color;
-  .flexCenter();
   text-align: center;
-  min-height: 100vh;
 }
 
-#root {
-  margin: 4em 2em;
+#main-content {
+  padding: 6em 2em;
+  .flexCenter();
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1,
@@ -72,7 +74,7 @@ button {
   background: linear-gradient(to right, @accent-color 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: right bottom;
-  transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
   color: @primary-text-color;
   cursor: pointer;
   font: inherit;
