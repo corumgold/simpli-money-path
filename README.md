@@ -1,4 +1,4 @@
-# ezee-money
+# simpli.money
 
 69% of Americans aren't saving enough to retire - many don't even have enough saved to cover a basic emergency. If you fall into one of these categories, this is a tool for you.
 
