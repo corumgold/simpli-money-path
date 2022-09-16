@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import moneyReducer from "./money";
 import userReducer from "./user";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
