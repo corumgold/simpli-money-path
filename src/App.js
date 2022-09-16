@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import {
   Start,
   Income,
@@ -19,12 +18,6 @@ import {
 function App() {
   return (
     <>
-      <Helmet>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        />
-      </Helmet>
       <Routes>
         <Route index element={<Start />} />
         <Route path="/income" element={<Income />} />
