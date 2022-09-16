@@ -7,6 +7,7 @@ import {
   setExpenses,
   setDebt,
   setCurrentStep,
+  setBudget,
 } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
 
@@ -69,6 +70,21 @@ const Start = () => {
     dispatch(setExpenses(0));
     dispatch(setDebt(0));
     dispatch(setCurrentStep(null));
+    dispatch(
+      setBudget({
+        Housing: 0,
+        Transportation: 0,
+        Food: 0,
+        Utilities: 0,
+        Medical: 0,
+        Insurance: 0,
+        "Household Supplies": 0,
+        Entertainment: 0,
+        Gifts: 0,
+        "Debt Payments": 0,
+        Other: 0,
+      })
+    );
   };
 
   useEffect(() => {

@@ -34,6 +34,13 @@ const Nav = () => {
       <ul className={burgerClicked ? "nav-links nav-active" : "nav-links"}>
         <li onClick={handleBurger}>
           <a
+            href="/budget"
+          >
+            Budget Tool
+          </a>
+        </li>
+        <li onClick={handleBurger}>
+          <a
             href="https://github.com/corumgold/simpli-money"
             target="_blank"
             rel="noreferrer"
