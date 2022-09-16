@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ExOverIn from "./ExOverIn";
-import { setCurrentStep, setDebt } from "../../redux/user";
+import { setCurrentStep, setDebt } from "../../../redux/user";
 
 const Debts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const user = useSelector((state) => state);
-  console.log(user);
 
   const [userDebts, setUserDebts] = useState({
     "Auto Loan(s)": 0,
@@ -33,7 +32,7 @@ const Debts = () => {
     );
     dispatch(setDebt(total));
     dispatch(setCurrentStep("initial emergency"));
-    navigate("/initial-emergency-fund");
+    navigate("/simpli-path/initial-emergency-fund");
   };
 
   if (user.monthlyExpenses > user.monthlyIncome) {

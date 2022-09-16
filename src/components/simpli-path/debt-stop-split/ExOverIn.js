@@ -1,5 +1,5 @@
 import React from "react";
-import { formatter } from "../../helperFuncs";
+import { formatter } from "../../../helperFuncs";
 
 const ExOverIn = ({ user }) => {
   return (

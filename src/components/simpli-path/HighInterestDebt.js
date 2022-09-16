@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { formatter } from "../helperFuncs";
-import { setCurrentStep } from "../redux/user";
+import { formatter } from "../../helperFuncs";
+import { setCurrentStep } from "../../redux/user";
 
 const HighInterestDebt = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const HighInterestDebt = () => {
 
   const handleClick = () => {
     dispatch(setCurrentStep("emergency fund"));
-    navigate("/emergency-fund");
+    navigate("/simpli-path/emergency-fund");
   };
 
   if (!user.debt) {

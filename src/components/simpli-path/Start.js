@@ -7,7 +7,7 @@ import {
   setExpenses,
   setDebt,
   setCurrentStep,
-} from "../redux/user";
+} from "../../redux/user";
 import { useNavigate } from "react-router-dom";
 
 const Start = () => {
@@ -24,41 +24,41 @@ const Start = () => {
     e.preventDefault();
     dispatch(setName(userName));
     dispatch(setCurrentStep("income"));
-    navigate("/income");
+    navigate("/simpli-path/income");
   };
 
   const handleContinue = (e) => {
     e.preventDefault();
     switch (user.currentStep) {
       case "income":
-        navigate("/income");
+        navigate("/simpli-path/income");
         break;
       case "expenses":
-        navigate("/expenses");
+        navigate("/simpli-path/expenses");
         break;
       case "debts":
-        navigate("/debts");
+        navigate("/simpli-path/debts");
         break;
       case "initial emergency":
-        navigate("/initial-emergency-fund");
+        navigate("/simpli-path/initial-emergency-fund");
         break;
       case "401k match":
-        navigate("/retirement-match");
+        navigate("/simpli-path/retirement-match");
         break;
       case "high interest debt":
-        navigate("/high-interest-debt");
+        navigate("/simpli-path/high-interest-debt");
         break;
       case "emergency fund":
-        navigate("/emergency-fund");
+        navigate("/simpli-path/emergency-fund");
         break;
       case "moderate interest debt":
-        navigate("/moderate-interest-debt");
+        navigate("/simpli-path/moderate-interest-debt");
         break;
       case "finish":
-        navigate("/finish");
+        navigate("/simpli-path/finish");
         break;
       default:
-        navigate("/income");
+        navigate("/simpli-path/income");
     }
   };
 
@@ -84,7 +84,9 @@ const Start = () => {
             situation.*
           </h1>
 
-          <h2>If you feel the same way, <span>today that changes</span>.</h2>
+          <h2>
+            If you feel the same way, <span>today that changes</span>.
+          </h2>
           <form>
             <label htmlFor="name">What's your name?</label>
             <input name="name" value={userName || ""} onChange={handleName} />

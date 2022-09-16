@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { EmergencyCalc } from "../helperFuncs";
+import { EmergencyCalc } from "../../helperFuncs";
 import { useNavigate } from "react-router-dom";
-import { setCurrentStep } from "../redux/user";
+import { setCurrentStep } from "../../redux/user";
 
 const InitialEmergency = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const InitialEmergency = () => {
 
   const handleClick = () => {
     dispatch(setCurrentStep('401k match'))
-    navigate("/retirement-match");
+    navigate("/simpli-path/retirement-match");
   };
 
   return (

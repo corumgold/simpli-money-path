@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setCurrentStep } from "../redux/user";
-import { formatter } from "../helperFuncs";
+import { setCurrentStep } from "../../redux/user";
+import { formatter } from "../../helperFuncs";
 
 const RetirementMatch = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const RetirementMatch = () => {
 
   const handleClick = () => {
     dispatch(setCurrentStep("finish"));
-    navigate("/finish");
+    navigate("/simpli-path/finish");
   };
 
   return (
