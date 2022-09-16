@@ -39,8 +39,8 @@ const Income = () => {
     <>
       <h1>Okay {user.name}, it's time to get a little personal.</h1>
       <h2>
-        I need to know what your <span>monthly</span> NET income is (the amount of money
-        you make after taxes).
+        I need to know what your <span>monthly</span> NET income is (the amount
+        of money you make after taxes).
       </h2>
       <h3>
         If you don't know how much that is, check out this{" "}
