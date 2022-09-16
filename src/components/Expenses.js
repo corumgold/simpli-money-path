@@ -59,6 +59,7 @@ const Expenses = () => {
         So, an average month for {user.name} looks like{" "}
         <span>{formatter.format(user.monthlyIncome)}</span> - Sound right?
       </h1>
+      <h3><a href="/income">Actually... I need to change that...</a></h3>
       <h2>
         Up next, we need to figure out what you typically spend in a month. If
         you aren't used to budgeting, you can use the tool below to get an
@@ -74,7 +75,7 @@ const Expenses = () => {
             <div className="form-item" key={expense}>
               <label htmlFor={expense}>{expense}:</label>
               <input
-                type='number'
+                type="number"
                 name={expense}
                 value={userExpenses[expense]}
                 onChange={handleChange(expense)}

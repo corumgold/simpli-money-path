@@ -39,7 +39,7 @@ const Income = () => {
     <>
       <h1>Okay {user.name}, it's time to get a little personal.</h1>
       <h2>
-        I need to know what your monthly GROSS income is (the amount of money
+        I need to know what your <span>monthly</span> GROSS income is (the amount of money
         you make after taxes).
       </h2>
       <h3>
