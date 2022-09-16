@@ -2,7 +2,7 @@
 @import "./tools/mixins.less";
 
 form {
-  .flexCenter(); 
+  .flexCenter();
   flex-direction: column;
   min-width: 300px;
 }
@@ -16,8 +16,13 @@ input {
   text-align: center;
   width: 7em;
   font: inherit;
-  
   margin: 0.75em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 label {
@@ -45,4 +50,3 @@ input:focus {
 form button {
   margin: 1em;
 }
-
