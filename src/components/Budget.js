@@ -8,7 +8,6 @@ const Budget = () => {
   const dispatch = useDispatch();
 
   let user = useSelector((state) => state);
-  console.log(user);
 
   const [userBudget, setUserBudget] = useState(user.budget);
 
