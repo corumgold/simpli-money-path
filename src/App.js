@@ -17,6 +17,7 @@ import {
 import Nav from "./components/Nav";
 import Budget from "./components/Budget";
 import ScrollToTop from "./ScrollToTop";
+import DebtsCalc from "./components/DebtsCalc";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <ScrollToTop>
           <Routes>
             <Route path="/budget" element={<Budget />} />
+            <Route path="/debts-calc" element={<DebtsCalc />} />
             <Route index element={<Start />} />
             <Route path="/simpli-path/income" element={<Income />} />
             <Route path="/simpli-path/expenses" element={<Expenses />} />

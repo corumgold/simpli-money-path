@@ -33,11 +33,7 @@ const Nav = () => {
       </div>
       <ul className={burgerClicked ? "nav-links nav-active" : "nav-links"}>
         <li onClick={handleBurger}>
-          <a
-            href="/budget"
-          >
-            Budget Tool
-          </a>
+          <a href="/budget">Budget Tool</a>
         </li>
         <li onClick={handleBurger}>
           <a
