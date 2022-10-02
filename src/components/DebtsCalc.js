@@ -1,9 +1,18 @@
 import React from "react";
-import { Bubble, Line } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
 ChartJS.register(...registerables);
 
 const DebtsCalc = () => {
+  const dotColors = ["red", "orange", "green", "blue", "purple"];
+  const lineColors = [
+    "lightcoral",
+    "coral",
+    "lightgreen",
+    "lightblue",
+    "lightpurple",
+  ];
+
   const fakeData = [
     {
       timeStamp: "Jul 22",
@@ -44,7 +53,10 @@ const DebtsCalc = () => {
 
           datasets: fakeData.map((data, idx) => {
             return {
-              backgroundColor: "limegreen",
+              borderColor: lineColors[idx],
+              backgroundColor: dotColors[idx],
+              borderDash: [10],
+              circular: true,
               id: idx + 1,
               label: data.debts[idx].type,
               data: fakeData.map((itm) => {
