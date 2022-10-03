@@ -1,69 +1,57 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
+import { useSelector } from "react-redux";
 ChartJS.register(...registerables);
 
 const DebtsCalc = () => {
-  const dotColors = ["red", "orange", "green", "blue", "purple"];
-  const lineColors = [
-    "lightcoral",
-    "coral",
-    "lightgreen",
-    "lightblue",
-    "lightpurple",
-  ];
+  const user = useSelector((state) => state);
+  const disposableIncome = user.monthlyIncome - user.monthlyExpenses;
+  console.log(user.debt);
+  console.log(disposableIncome);
 
-  const fakeData = [
-    {
-      timeStamp: "Jul 22",
-      debts: [
-        { type: "Credit Card", amt: 10000 },
-        { type: "Auto Loan", amt: 15000 },
-        { type: "Student Loan", amt: 30000 },
-      ],
-    },
-    {
-      timeStamp: "Aug 22",
-      debts: [
-        { type: "Credit Card", amt: 9000 },
-        { type: "Auto Loan", amt: 12000 },
-        { type: "Student Loan", amt: 27000 },
-      ],
-    },
-    {
-      timeStamp: "Sep 22",
-      debts: [
-        { type: "Credit Card", amt: 7500 },
-        { type: "Auto Loan", amt: 10000 },
-        { type: "Student Loan", amt: 25000 },
-      ],
-    },
-  ];
+  const createArrayOfMonthsToPayoff = (totalDebt, monthlyDisposable) => {
+    const totalMonths = Math.ceil(totalDebt / monthlyDisposable);
+    const months = [];
+
+    function addMonths(numOfMonths, date = new Date()) {
+      date.setMonth(date.getMonth() + numOfMonths);
+      return date;
+    }
+
+    for (let i = totalMonths; i >= 0; i--) {
+      // months.unshift(`${new Date().getMonth() + i}/${new Date().getFullYear()}`);
+      months.unshift(addMonths(i).getMonth());
+    }
+    return months;
+  };
+
+  const createMonthlyDebtPaydownAmts = (totalDebt, monthlyDisposable) => {
+    const monthlyDebtArr = [];
+    for (let i = totalDebt; i >= 0; i -= monthlyDisposable) {
+      monthlyDebtArr.push(i);
+    }
+    return monthlyDebtArr;
+  };
+
+  // console.log(createMonthlyDebtPaydownAmts(user.debt, disposableIncome));
 
   return (
     <>
       <h1>Debts</h1>
-      <Line
-        color="#fffff"
-        datasetIdKey="id"
+      <Bar
+        // datasetIdKey="id"
         data={{
-          labels: fakeData.map((item) => {
-            return item.timeStamp;
-          }),
-
-          datasets: fakeData.map((data, idx) => {
-            return {
-              borderColor: lineColors[idx],
-              backgroundColor: dotColors[idx],
-              borderDash: [10],
-              circular: true,
-              id: idx + 1,
-              label: data.debts[idx].type,
-              data: fakeData.map((itm) => {
-                return itm.debts[idx].amt;
-              }),
-            };
-          }),
+          labels: createArrayOfMonthsToPayoff(user.debt, disposableIncome),
+          datasets: [
+            {
+              borderColor: "green",
+              backgroundColor: "#8ac926",
+              // id: 1,
+              label: "Total Debt",
+              data: createMonthlyDebtPaydownAmts(user.debt, disposableIncome),
+            },
+          ],
         }}
       />
     </>
