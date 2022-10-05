@@ -124,7 +124,7 @@ const Start = () => {
         </>
       )}
 
-      <p>*Capital One & The Decision Lab</p>
+      {!user.name && <p>*Capital One & The Decision Lab</p>}
     </>
   );
 };
