@@ -209,6 +209,9 @@ form button {
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+.signout-link {
+  cursor: pointer;
+}
 * {
   box-sizing: border-box;
 }

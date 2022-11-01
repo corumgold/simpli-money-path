@@ -20,16 +20,16 @@ const Start = () => {
   const [currUser, setCurrUser] = useState(null);
   console.log(currUser)
 
-  const handleName = (e) => {
-    setUserName(e.target.value);
-  };
+  // const handleName = (e) => {
+  //   setUserName(e.target.value);
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(setName(userName));
-    dispatch(setCurrentStep("income"));
-    navigate("/simpli-path/income");
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(setName(userName));
+  //   dispatch(setCurrentStep("income"));
+  //   navigate("/simpli-path/income");
+  // };
 
   const handleContinue = (e) => {
     e.preventDefault();
@@ -108,7 +108,7 @@ const Start = () => {
     <>
       {!currUser ? (
         <>
-          {/* <h1>
+          <h1>
             <span>77%</span> of Americans are anxious about their financial
             situation.*
           </h1>
@@ -116,7 +116,7 @@ const Start = () => {
           <h2>
             If you feel the same way, <span>today that changes</span>.
           </h2>
-          <form>
+          {/* <form>
             <label htmlFor="name">What's your name?</label>
             <input name="name" value={userName || ""} onChange={handleName} />
 
