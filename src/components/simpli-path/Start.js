@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setName,
@@ -10,12 +9,16 @@ import {
   setBudget,
 } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../../supabaseClient";
+import Auth from "../Auth";
 
 const Start = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const user = useSelector((state) => state);
+  const [currUser, setCurrUser] = useState(null);
+  console.log(currUser)
 
   const handleName = (e) => {
     setUserName(e.target.value);
@@ -88,14 +91,24 @@ const Start = () => {
   };
 
   useEffect(() => {
-    return;
-  }, [user]);
+    const checkIfCurrentUser = async () => {
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        setCurrUser(user);
+      } catch (error) {
+        alert(error.error_description || error.message);
+      }
+    };
+    checkIfCurrentUser();
+  }, []);
 
   return (
     <>
-      {!user.name ? (
+      {!currUser ? (
         <>
-          <h1>
+          {/* <h1>
             <span>77%</span> of Americans are anxious about their financial
             situation.*
           </h1>
@@ -108,7 +121,8 @@ const Start = () => {
             <input name="name" value={userName || ""} onChange={handleName} />
 
             <button onClick={handleSubmit}>Let's Do This!</button>
-          </form>
+          </form> */}
+          <Auth />
         </>
       ) : (
         <>
