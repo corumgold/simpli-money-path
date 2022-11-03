@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [burgerClicked, setBurgerClicked] = useState(false);
 
   const handleBurger = () => {
@@ -25,6 +27,7 @@ const Nav = () => {
     try {
       const { error } = await supabase.auth.signOut();
       if (error) console.log(error);
+      navigate("/logout")
     } catch (error) {
       alert(error.error_description || error.message);
     }
@@ -54,7 +57,9 @@ const Nav = () => {
             Source Code
           </a>
         </li>
-        <li className="signout-link" onClick={handleSignOut}>Sign Out</li>
+        <li className="signout-link" onClick={handleSignOut}>
+          Sign Out
+        </li>
       </ul>
       <div
         onClick={handleBurger}

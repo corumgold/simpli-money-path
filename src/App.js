@@ -18,6 +18,7 @@ import Nav from "./components/Nav";
 import Budget from "./components/Budget";
 import ScrollToTop from "./ScrollToTop";
 import DebtsCalc from "./components/DebtsCalc";
+import SignOut from "./components/SignOut";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
             />
             <Route path="/simpli-path/retirement" element={<Retirement />} />
             <Route path="/simpli-path/finish" element={<Finish />} />
+            <Route path="/logout" element={<SignOut />} />
           </Routes>
         </ScrollToTop>
       </div>
