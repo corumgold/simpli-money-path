@@ -5,7 +5,8 @@ export const currUserSlice = createSlice({
   initialState: null,
   reducers: {
     setCurrUser: (state, action) => {
-      state.currUser = action.payload;
+      state = action.payload;
+      return state
     },
   },
 });

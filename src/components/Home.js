@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Auth from "./Auth";
 import { supabase } from "../supabaseClient";
 import { setCurrUser } from "../redux/currUser";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Home = () => {
-  const currUser = useSelector((state) => state);
+  const currUser = useSelector((state) => state.currUser);
+  const dispatch = useDispatch();
   console.log(currUser);
 
   useEffect(() => {
@@ -14,13 +15,14 @@ const Home = () => {
         const {
           data: { user },
         } = await supabase.auth.getUser();
-        setCurrUser(user);
+        console.log(user);
+        dispatch(setCurrUser(user));
       } catch (error) {
         alert(error.error_description || error.message);
       }
     };
     checkIfCurrentUser();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
