@@ -9,16 +9,13 @@ import {
   setBudget,
 } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "../../supabaseClient";
-import Auth from "../Auth";
 
 const Start = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const user = useSelector((state) => state);
-  const [currUser, setCurrUser] = useState(null);
-  console.log(currUser)
+
 
   // const handleName = (e) => {
   //   setUserName(e.target.value);
@@ -90,42 +87,8 @@ const Start = () => {
     );
   };
 
-  useEffect(() => {
-    const checkIfCurrentUser = async () => {
-      try {
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
-        setCurrUser(user);
-      } catch (error) {
-        alert(error.error_description || error.message);
-      }
-    };
-    checkIfCurrentUser();
-  }, []);
-
   return (
     <>
-      {!currUser ? (
-        <>
-          <h1>
-            <span>77%</span> of Americans are anxious about their financial
-            situation.*
-          </h1>
-
-          <h2>
-            If you feel the same way, <span>today that changes</span>.
-          </h2>
-          {/* <form>
-            <label htmlFor="name">What's your name?</label>
-            <input name="name" value={userName || ""} onChange={handleName} />
-
-            <button onClick={handleSubmit}>Let's Do This!</button>
-          </form> */}
-          <Auth />
-        </>
-      ) : (
-        <>
           <h1>Welcome back, {user.name}!</h1>
           <h2>
             Would you like to <span>continue</span> where you left off on your
@@ -135,10 +98,6 @@ const Start = () => {
             <button onClick={handleContinue}>Continue</button>
             <button onClick={handleRestart}>Restart</button>
           </div>
-        </>
-      )}
-
-      {!user.name && <p>*Capital One & The Decision Lab</p>}
     </>
   );
 };
