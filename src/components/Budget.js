@@ -1,32 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setExpenses, setBudget } from "../redux/user";
 import { formatter } from "../helperFuncs";
+import { capitalizeFirstLetter, getTotal } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 const Budget = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   let user = useSelector((state) => state);
 
   const [userBudget, setUserBudget] = useState(user.budget);
+  const [total, setTotal] = useState(getTotal(userBudget));
 
   const handleChange = (prop) => (e) => {
+    const value = e.target.value === "" ? "" : +e.target.value;
     setUserBudget({
       ...userBudget,
-      [prop]: +e.target.value,
+      [prop]: value,
     });
   };
 
   const handleTotalAndBudget = (e) => {
     e.preventDefault();
-    const total = Object.values(userBudget).reduce(
-      (acc, curr) => acc + +curr,
-      0
-    );
     dispatch(setBudget(userBudget));
     dispatch(setExpenses(total));
+    navigate("/simpli-path/expenses");
   };
+
+  useEffect(() => {
+    setTotal(getTotal(userBudget));
+  }, [userBudget]);
 
   return (
     <>
@@ -38,20 +45,20 @@ const Budget = () => {
             {Object.keys(userBudget).map((item) => {
               return (
                 <div className="form-item" key={item}>
-                  <label htmlFor={item}>{item}:</label>
+                  <label htmlFor={item}>{capitalizeFirstLetter(item)}:</label>
                   <input
                     type="number"
                     name={item}
-                    value={userBudget[item] || null}
+                    value={userBudget[item]}
                     onChange={handleChange(item)}
                   ></input>
                 </div>
               );
             })}
 
-            <button onClick={handleTotalAndBudget}>Set Budget</button>
+            <button onClick={handleTotalAndBudget}>Return to Money Journey</button>
           </form>
-          <h3>Total Expenses: {formatter.format(user.monthlyExpenses)}</h3>
+          <h3>Total Expenses: {formatter.format(total)}</h3>
         </>
       ) : (
         <>
