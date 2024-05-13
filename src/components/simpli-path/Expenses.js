@@ -4,6 +4,7 @@ import { useState } from "react";
 import { setCurrentStep, setExpenses } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
 import { formatter } from "../../helperFuncs";
+import { getTotal } from "../../utils";
 
 const Expenses = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,8 @@ const Expenses = () => {
     <>
       <h1>
         So, an average month for {user.name} looks like{" "}
-        <span>{formatter.format(user.monthlyIncome)}</span> - Sound right?
+        <span>{formatter.format(getTotal(user.monthlyIncome))}</span> - Sound
+        right?
       </h1>
       <h3>
         <a href="/simpli-path/income">Actually... I need to change that...</a>

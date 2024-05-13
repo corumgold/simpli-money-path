@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setIncome, setCurrentStep } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
+import { capitalizeFirstLetter } from "../../utils";
 
 const Income = () => {
   const dispatch = useDispatch();
@@ -11,10 +12,10 @@ const Income = () => {
   const user = useSelector((state) => state);
 
   const [userIncome, setUserIncome] = useState({
-    Salary: 0,
-    Disability: 0,
-    "Alimony/Child Support": 0,
-    Other: 0,
+    salary: user.monthlyIncome.salary || 0,
+    disability: user.monthlyIncome.disability || 0,
+    alimony: user.monthlyIncome.alimony || 0,
+    other: user.monthlyIncome.other || 0,
   });
 
   const handleChange = (prop) => (event) => {
@@ -26,11 +27,7 @@ const Income = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const total = Object.values(userIncome).reduce(
-      (acc, curr) => acc + +curr,
-      0
-    );
-    dispatch(setIncome(total));
+    dispatch(setIncome(userIncome));
     dispatch(setCurrentStep("expenses"));
     navigate("/simpli-path/expenses");
   };
@@ -58,7 +55,7 @@ const Income = () => {
         {Object.keys(userIncome).map((source) => {
           return (
             <div className="form-item" key={source}>
-              <label htmlFor={source}>{source}:</label>
+              <label htmlFor={source}>{capitalizeFirstLetter(source)}:</label>
               <input
                 type="number"
                 name={source}
