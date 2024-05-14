@@ -6,7 +6,7 @@ export const formatter = new Intl.NumberFormat("en-US", {
 
 export const EmergencyCalc = function (user, amtToSave) {
   const unrounded = amtToSave / (getTotal(user.monthlyIncome) - getTotal(user.budget));
-  return Math.ceil(unrounded);
+  return Math.floor(unrounded);
 };
 
 export function getTotal(userIncome) {
