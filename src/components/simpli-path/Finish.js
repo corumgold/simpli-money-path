@@ -37,13 +37,7 @@ const RetirementMatch = () => {
         </a>
       </h3>
       <h3>
-        <a
-          href="https://www.fool.com/retirement/strategies/how-can-i-retire-early/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Invest more/Retire early
-        </a>
+        <a href="/early-retirement/intro">Invest more/Retire early</a>
       </h3>
       <button onClick={handleClick}>Take me home</button>
     </>

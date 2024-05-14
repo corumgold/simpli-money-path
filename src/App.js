@@ -19,6 +19,8 @@ import Budget from "./components/Budget";
 import ScrollToTop from "./ScrollToTop";
 import DebtsCalc from "./components/DebtsCalc";
 import NoDebt from "./components/simpli-path/NoDebt";
+import EarlyRetirement from "./components/retire-early/EarlyRetirement";
+import EarlyRetirementPlan from "./components/retire-early/EarlyRetirementPlan";
 
 function App() {
   return (
@@ -54,6 +56,14 @@ function App() {
             />
             <Route path="/simpli-path/retirement" element={<Retirement />} />
             <Route path="/simpli-path/finish" element={<Finish />} />
+            <Route
+              path="/early-retirement/intro"
+              element={<EarlyRetirement />}
+            />
+            <Route
+              path="/early-retirement/plan"
+              element={<EarlyRetirementPlan />}
+            />
           </Routes>
         </ScrollToTop>
       </div>

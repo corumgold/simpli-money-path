@@ -81,7 +81,7 @@ label {
   text-align: start;
 }
 .money-data input {
-  width: 5em;
+  max-width: auto;
   margin: 0;
 }
 textarea:focus,

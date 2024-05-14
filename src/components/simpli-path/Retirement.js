@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentStep } from "../../redux/user";
-import { formatter, getTotal } from "../../helperFuncs";
+import { formatter, getMonthlySavingsNumber } from "../../helperFuncs";
 
 const RetirementMatch = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const RetirementMatch = () => {
       <h3>
         For you, {user.name}, that looks like{" "}
         <span>
-          {formatter.format(Math.floor(getTotal(user.monthlyIncome) * 0.15))}
+          {formatter.format(getMonthlySavingsNumber(user, 15))}
         </span>{" "}
         every month in your 401k, and/or an{" "}
         <a
