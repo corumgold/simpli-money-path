@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ExOverIn from "./ExOverIn";
 import { setCurrentStep, setDebt } from "../../../redux/user";
+import { getTotal } from "../../../helperFuncs";
 
 const Debts = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,9 @@ const Debts = () => {
     );
     dispatch(setDebt(total));
     dispatch(setCurrentStep("initial emergency"));
-    navigate("/simpli-path/initial-emergency-fund");
+    getTotal(userDebts)
+      ? navigate("/simpli-path/initial-emergency-fund")
+      : navigate("/simpli-path/no-debt");
   };
 
   if (user.monthlyExpenses > user.monthlyIncome) {

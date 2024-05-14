@@ -39,6 +39,9 @@ const Start = () => {
       case "debts":
         navigate("/simpli-path/debts");
         break;
+      case "no debt":
+        navigate("/simpli-path/no-debt");
+        break;
       case "initial emergency":
         navigate("/simpli-path/initial-emergency-fund");
         break;

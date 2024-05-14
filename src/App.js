@@ -18,6 +18,7 @@ import Nav from "./components/Nav";
 import Budget from "./components/Budget";
 import ScrollToTop from "./ScrollToTop";
 import DebtsCalc from "./components/DebtsCalc";
+import NoDebt from "./components/simpli-path/NoDebt";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/simpli-path/expenses" element={<Expenses />} />
             <Route path="/simpli-path/debts" element={<Debts />} />
             <Route path="/simpli-path/stop" element={<ExOverIn />} />
+            <Route path="/simpli-path/no-debt" element={<NoDebt />} />
             <Route
               path="/simpli-path/initial-emergency-fund"
               element={<InitialEmergency />}
