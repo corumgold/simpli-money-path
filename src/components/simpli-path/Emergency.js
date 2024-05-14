@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { EmergencyCalc, formatter } from "../../helperFuncs";
+import { EmergencyCalc, formatter, getTotal } from "../../helperFuncs";
 import { useNavigate } from "react-router-dom";
 import { setCurrentStep } from "../../redux/user";
 
@@ -11,12 +11,17 @@ const Emergency = () => {
   const user = useSelector((state) => state);
 
   const handleClick = () => {
-    dispatch(setCurrentStep("moderate interest debt"));
-    navigate("/simpli-path/moderate-interest-debt");
+    if (user.debt) {
+      dispatch(setCurrentStep("moderate interest debt"));
+      navigate("/simpli-path/moderate-interest-debt");
+    } else {
+      dispatch(setCurrentStep("retirement"));
+      navigate("/simpli-path/retirement");
+    }
   };
 
-  const threeMonths = user.monthlyExpenses * 3;
-  const sixMonths = user.monthlyExpenses * 4;
+  const threeMonths = getTotal(user.budget) * 3;
+  const sixMonths = getTotal(user.budget) * 4;
 
   return (
     <>

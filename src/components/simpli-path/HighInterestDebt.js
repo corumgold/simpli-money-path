@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { formatter } from "../../helperFuncs";
+import { formatter, getTotal } from "../../helperFuncs";
 import { setCurrentStep } from "../../redux/user";
 
 const HighInterestDebt = () => {
@@ -42,7 +42,7 @@ const HighInterestDebt = () => {
         </a>{" "}
         to put that{" "}
         <span>
-          {formatter.format(user.monthlyIncome - user.monthlyExpenses)}
+          {formatter.format(getTotal(user.monthlyIncome) - getTotal(user.budget))}
         </span>{" "}
         left over each month to work and get that debt paid off!
       </h3>

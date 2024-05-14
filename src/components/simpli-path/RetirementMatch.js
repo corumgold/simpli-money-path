@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentStep } from "../../redux/user";
 
@@ -7,9 +7,13 @@ const RetirementMatch = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const user = useSelector((state) => state);
+
   const handleClick = () => {
     dispatch(setCurrentStep("high interest debt"));
-    navigate("/simpli-path/high-interest-debt");
+    user.debt
+      ? navigate("/simpli-path/high-interest-debt")
+      : navigate("/simpli-path/emergency-fund");
   };
 
   return (

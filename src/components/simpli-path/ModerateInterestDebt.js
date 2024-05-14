@@ -27,15 +27,6 @@ const HighInterestDebt = () => {
     setDebtSubmitted(true);
   };
 
-  if (!user.debt) {
-    return (
-      <>
-        <h1>Congratulations! You're Debt Free!</h1>
-        <button onClick={handleClick}>Move On</button>
-      </>
-    );
-  }
-
   return (
     <>
       <h1>Okay {user.name}, now's the time to finish off that debt.</h1>

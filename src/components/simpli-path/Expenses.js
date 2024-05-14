@@ -36,7 +36,9 @@ const Expenses = () => {
       </h2>
 
       <h2>{formatter.format(getTotal(user.budget))}</h2>
-      {user.budget && <button onClick={handleSubmit}>Continue</button>}
+      {getTotal(user.budget) ? (
+        <button onClick={handleSubmit}>Continue</button>
+      ) : null}
     </>
   );
 };
