@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setName,
   setIncome,
-  setExpenses,
   setDebt,
   setCurrentStep,
   setBudget,
@@ -67,7 +66,6 @@ const Start = () => {
     e.preventDefault();
     dispatch(setName(""));
     dispatch(setIncome(0));
-    dispatch(setExpenses(0));
     dispatch(setDebt(0));
     dispatch(setCurrentStep(null));
     dispatch(

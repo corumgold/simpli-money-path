@@ -31,10 +31,12 @@ const Expenses = () => {
         the <a href="/budget">Budget Tool</a>.
       </h2>
       <h2>No pressure, you can always change your budget later.</h2>
-      <h2><span>Total Expenses:</span></h2>
+      <h2>
+        <span>Total Expenses:</span>
+      </h2>
 
-        <h2>{formatter.format(getTotal(user.budget))}</h2>
-        <button onClick={handleSubmit}>Continue</button>
+      <h2>{formatter.format(getTotal(user.budget))}</h2>
+      {user.budget && <button onClick={handleSubmit}>Continue</button>}
     </>
   );
 };

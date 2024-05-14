@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { setExpenses, setBudget } from "../redux/user";
+import { setBudget } from "../redux/user";
 import { formatter } from "../helperFuncs";
 import { capitalizeFirstLetter, getTotal } from "../helperFuncs";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +27,6 @@ const Budget = () => {
   const handleTotalAndBudget = (e) => {
     e.preventDefault();
     dispatch(setBudget(userBudget));
-    dispatch(setExpenses(total));
     navigate("/simpli-path/expenses");
   };
 
