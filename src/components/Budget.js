@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setBudget } from "../redux/user";
-import { formatter } from "../helperFuncs";
+import { formatter, navigateToStep } from "../helperFuncs";
 import { capitalizeFirstLetter, getTotal } from "../helperFuncs";
 import { useNavigate } from "react-router-dom";
 
 const Budget = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
 
   let user = useSelector((state) => state);
 
@@ -27,7 +26,8 @@ const Budget = () => {
   const handleTotalAndBudget = (e) => {
     e.preventDefault();
     dispatch(setBudget(userBudget));
-    navigate("/simpli-path/expenses");
+    const nextStepPath = navigateToStep(user.currentStep);
+    navigate(nextStepPath);
   };
 
   useEffect(() => {
@@ -55,7 +55,9 @@ const Budget = () => {
               );
             })}
 
-            <button onClick={handleTotalAndBudget}>Return to Money Journey</button>
+            <button onClick={handleTotalAndBudget}>
+              Return to Money Journey
+            </button>
           </form>
           <h3>Total Expenses: {formatter.format(total)}</h3>
         </>

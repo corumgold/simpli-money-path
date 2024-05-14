@@ -9,6 +9,7 @@ import {
   setBudget,
 } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
+import { navigateToStep } from "../../helperFuncs";
 
 const Start = () => {
   const dispatch = useDispatch();
@@ -29,40 +30,8 @@ const Start = () => {
 
   const handleContinue = (e) => {
     e.preventDefault();
-    switch (user.currentStep) {
-      case "income":
-        navigate("/simpli-path/income");
-        break;
-      case "expenses":
-        navigate("/simpli-path/expenses");
-        break;
-      case "debts":
-        navigate("/simpli-path/debts");
-        break;
-      case "no debt":
-        navigate("/simpli-path/no-debt");
-        break;
-      case "initial emergency":
-        navigate("/simpli-path/initial-emergency-fund");
-        break;
-      case "401k match":
-        navigate("/simpli-path/retirement-match");
-        break;
-      case "high interest debt":
-        navigate("/simpli-path/high-interest-debt");
-        break;
-      case "emergency fund":
-        navigate("/simpli-path/emergency-fund");
-        break;
-      case "moderate interest debt":
-        navigate("/simpli-path/moderate-interest-debt");
-        break;
-      case "finish":
-        navigate("/simpli-path/finish");
-        break;
-      default:
-        navigate("/simpli-path/income");
-    }
+    const nextStepPath = navigateToStep(user.currentStep);
+    navigate(nextStepPath);
   };
 
   const handleRestart = (e) => {

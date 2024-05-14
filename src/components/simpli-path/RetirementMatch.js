@@ -10,10 +10,13 @@ const RetirementMatch = () => {
   const user = useSelector((state) => state);
 
   const handleClick = () => {
-    dispatch(setCurrentStep("high interest debt"));
-    user.debt
-      ? navigate("/simpli-path/high-interest-debt")
-      : navigate("/simpli-path/emergency-fund");
+    if (user.debt) {
+      dispatch(setCurrentStep("high interest debt"));
+      navigate("/simpli-path/high-interest-debt");
+    } else {
+      dispatch(setCurrentStep("emergency fund"));
+      navigate("/simpli-path/emergency-fund");
+    }
   };
 
   return (

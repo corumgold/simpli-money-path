@@ -15,15 +15,6 @@ const HighInterestDebt = () => {
     navigate("/simpli-path/emergency-fund");
   };
 
-  if (!user.debt) {
-    return (
-      <>
-        <h1>Since you don't have any debt, you can skip this part!</h1>
-        <button onClick={handleClick}>Move On</button>
-      </>
-    );
-  }
-
   return (
     <>
       <h1>Let's pay off some debt, {user.name}! </h1>
