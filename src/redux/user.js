@@ -10,7 +10,6 @@ export const userSlice = createSlice({
       alimony: 0,
       other: 0,
     },
-    monthlyExpenses: 0,
     debt: 0,
     currentStep: null,
     budget: {
@@ -33,9 +32,6 @@ export const userSlice = createSlice({
     },
     setIncome: (state, action) => {
       state.monthlyIncome = action.payload;
-    },
-    setExpenses: (state, action) => {
-      state.monthlyExpenses = action.payload;
     },
     setDebt: (state, action) => {
       state.debt = action.payload;

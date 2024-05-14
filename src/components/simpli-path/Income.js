@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setIncome, setCurrentStep } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
-import { capitalizeFirstLetter } from "../../utils";
+import { capitalizeFirstLetter } from "../../helperFuncs";
 
 const Income = () => {
   const dispatch = useDispatch();

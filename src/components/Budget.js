@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setExpenses, setBudget } from "../redux/user";
 import { formatter } from "../helperFuncs";
-import { capitalizeFirstLetter, getTotal } from "../utils";
+import { capitalizeFirstLetter, getTotal } from "../helperFuncs";
 import { useNavigate } from "react-router-dom";
 
 const Budget = () => {

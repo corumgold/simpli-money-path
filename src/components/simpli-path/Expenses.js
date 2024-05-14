@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import { setCurrentStep, setExpenses } from "../../redux/user";
+import { setCurrentStep } from "../../redux/user";
 import { useNavigate } from "react-router-dom";
 import { formatter } from "../../helperFuncs";
-import { getTotal } from "../../utils";
+import { getTotal } from "../../helperFuncs";
 
 const Expenses = () => {
   const dispatch = useDispatch();
@@ -12,14 +11,7 @@ const Expenses = () => {
 
   let user = useSelector((state) => state);
 
-  const [totalExpenses, setTotalExpenses] = useState(user.monthlyExpenses);
-
-  const handleTotal = (e) => {
-    setTotalExpenses(e.target.value);
-  };
-
   const handleSubmit = async (e) => {
-    dispatch(setExpenses(+totalExpenses));
     dispatch(setCurrentStep("debts"));
     navigate("/simpli-path/debts");
   };
@@ -35,16 +27,14 @@ const Expenses = () => {
         <a href="/simpli-path/income">Actually... I need to change that...</a>
       </h3>
       <h2>
-        Up next, we need to figure out what you typically spend in a month (we
-        recommend using our <a href="/budget">Budget Tool</a> to get a more
-        accurate number).
+        Up next, we need to figure out what you typically spend in a month using
+        the <a href="/budget">Budget Tool</a>.
       </h2>
-      <h2>Otherwise, simply input your estimated monthly spending.</h2>
-      <form>
-        <label htmlFor="total">Total Expenses: </label>
-        <input name="total" value={totalExpenses} onChange={handleTotal} />
+      <h2>No pressure, you can always change your budget later.</h2>
+      <h2><span>Total Expenses:</span></h2>
+
+        <h2>{formatter.format(getTotal(user.budget))}</h2>
         <button onClick={handleSubmit}>Continue</button>
-      </form>
     </>
   );
 };
