@@ -227,7 +227,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100dvh;
+  min-height: 100dvh;
 }
 h1,
 h2,
