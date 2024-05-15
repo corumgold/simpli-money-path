@@ -224,7 +224,7 @@ body {
   text-align: center;
 }
 #main-content {
-  padding: 3em 2em;
+  padding: 6em 2em 0;
   /* padding-top: max(50px, 10vh); */
   display: flex;
   justify-content: center;
@@ -241,6 +241,7 @@ h3 {
 }
 body {
   font-size: 1.25em;
+  overflow: hidden;
 }
 @media screen and (max-width: 1200px) {
   body {
