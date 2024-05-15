@@ -228,6 +228,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100dvh;
+  overflow: hidden;
 }
 h1,
 h2,
