@@ -59,7 +59,7 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-width: 300px;
+  min-width: 250px;
 }
 input {
   background-color: transparent;
@@ -70,6 +70,7 @@ input {
   text-align: center;
   width: 7em;
   font: inherit;
+  font-size: 1.25em;
   margin: 0.75em;
 }
 input::-webkit-outer-spin-button,
@@ -78,6 +79,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 label {
+  font-size: 1.25em;
   text-align: start;
 }
 .money-data input {
@@ -92,7 +94,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 18em;
+  width: 100%;
   margin-bottom: 1em;
 }
 form button {
@@ -222,13 +224,14 @@ body {
   text-align: center;
 }
 #main-content {
-  padding: 6em 2em;
+  padding: 3em 2em;
+  /* padding-top: max(50px, 10vh); */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100dvh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 h1,
 h2,
@@ -251,7 +254,7 @@ body {
 }
 @media screen and (max-width: 480px) {
   body {
-    font-size: 0.775em;
+    font-size: 0.7em;
   }
 }
 h1 {

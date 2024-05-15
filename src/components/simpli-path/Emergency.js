@@ -27,11 +27,11 @@ const Emergency = () => {
     <>
       <h1>Okay, {user.name} - let's go back to the emergency fund</h1>
       <h2>
-        You have some cash ready for a small emergency, but what if you run into
-        a larger emergency like the loss of a job or a serious accident/illness?
+        You have some cash ready for a small emergency, but what if you
+        experience a more costly emergency?
       </h2>
       <h3>
-        It's recommended that you have somewhere between 3 and 6 months expenses{" "}
+        It's recommended that you have between 3 and 6 months expenses{" "}
         ({formatter.format(threeMonths)} - {formatter.format(sixMonths)})* in a
         savings account ready if you ever need it.
       </h3>

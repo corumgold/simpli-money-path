@@ -27,10 +27,10 @@ const Expenses = () => {
         <a href="/simpli-path/income">Actually... I need to change that...</a>
       </h3>
       <h2>
-        Up next, we need to figure out what you typically spend in a month using
-        the <a href="/budget">Budget Tool</a>.
+        Up next, we'll figure out what you spend per month using the{" "}
+        <a href="/budget">Budget Tool</a>. You can change this later with the
+        link in the nav bar.
       </h2>
-      <h2>No pressure, you can always change your budget later.</h2>
       <h2>
         <span>Total Expenses:</span>
       </h2>
