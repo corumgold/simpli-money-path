@@ -18,6 +18,10 @@ const buttonStyles = {
   padding: "8px 16px",
 };
 
+const warningStyles = {
+  color: "#FF6347",
+};
+
 const EarlyRetirementPlan = () => {
   const [savingsRate, setSavingsRate] = useState(15);
   const [currentSavings, setCurrentSavings] = useState(0);
@@ -37,16 +41,16 @@ const EarlyRetirementPlan = () => {
         you may think.
       </h1>
       <form className="money-data">
-      <div className="form-item">
-        <label>Current Savings</label>
-        <input
-          type="number"
-          name="current-savings"
-          value={currentSavings}
-          onChange={handleChange}
-        />
-      </div>
-    </form>
+        <div className="form-item">
+          <label>Current Savings</label>
+          <input
+            type="number"
+            name="current-savings"
+            value={currentSavings}
+            onChange={handleChange}
+          />
+        </div>
+      </form>
       <h2>
         If you are saving {savingsRate}% of your take-home pay (
         {formatter.format(monthlySavingsNumber)}), it will take you{" "}
@@ -73,7 +77,7 @@ const EarlyRetirementPlan = () => {
         </button>
       </div>
       {monthlySavingsNumber > disposableIncome ? (
-        <p>
+        <p style={warningStyles}>
           {formatter.format(monthlySavingsNumber)} is more than your current
           disposable income of {formatter.format(disposableIncome)}
         </p>
